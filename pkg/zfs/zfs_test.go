@@ -68,10 +68,10 @@ func zpoolTest(t *testing.T, fn func()) {
 		defer os.Remove(f.Name())
 	}
 
-	pool, err := CreateZpool("test", nil, tempfiles...)
+	_, err := CreateZpool("test", nil, tempfiles...)
 	ok(t, err)
-	defer pool.Destroy()
-	ok(t, err)
+	// defer pool.Destroy()
+	// ok(t, err)
 	fn()
 
 }
